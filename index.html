@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/x-icon" href="./icons/heart.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+
+    <title>Friends App</title>
+</head>
+<body>
+    <div class="mainMenu">
+        <button class="find-btn">Find a friend</button>
+        <img  class="image-main-screen" src="/media/friendslogo.png" alt="image-main-screen">
+    </div>
+
+    <div class="section-dating">
+        <div class="aside-search-form">
+            <div class="sortBy">
+                <form class="search-field">
+                    <input type="text" placeholder="Search by name ...">
+                    <button type="submit"></button>
+                </form>
+                <p class="search-text">Filter by:</p>
+
+                <div class="sortByAge">
+                    <p class="search-text">Age:</p>
+                    <input type="radio" id="search-age-to-30" name="age" value="age">
+                    <label class="radio-button" for="search-age-to-30">to 30</label>
+                    <input type="radio" id="search-age-to-50" name="age" value="age">
+                    <label class="radio-button" for="search-age-to-50">to 50</label>
+                    <input type="radio" id="search-age-to-80" name="age" value="age">
+                    <label class="radio-button" for="search-age-to-80">to 80</label>
+                </div>
+    
+                <div class="sortByGender">
+                    <p class="search-text">Gender:</p>
+                    <input type="radio" id="search-gender" name="gender" value="gender">
+                    <label class="radio-button" for="search-gender">male</label>
+                    <input type="radio" id="search-gender" name="gender" value="gender">
+                    <label class="radio-button" for="search-gender">female</label>
+                    <input type="radio" id="search-gender" name="gender" value="gender">
+                    <label class="radio-button" for="search-gender">all</label>
+                </div>
+            </div>
+        </div>
+        <div class="section-users"></div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
