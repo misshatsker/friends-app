@@ -11,20 +11,20 @@ function getUserCardHTMLCode({media, name, gender, age, email, phone}) {
     return `
         <img class="imageUser" src="${media}" alt="avatar">
         <div class="title-age details">
-            <img class="icon-items" src="./icon/name.png" alt="name">
-            <p>${name}, ${age}</p>
+            <img class="details-icon" src="./icon/name.png" alt="name">
+            <p class="details-content">${name}, ${age}</p>
         </div>
         <div class="gender details">
-            <img class="icon-items" src="./icon/sex.png" alt="gender">
-            <p>${gender}</p>
+            <img class="details-icon" src="./icon/sex.png" alt="gender">
+            <p class="details-content">${gender}</p>
         </div>
         <div class="email details">
-            <img class="icon-items" src="./icon/email.png" alt="email">
-            <p>${email}</p>
+            <img class="details-icon" src="./icon/email.png" alt="email">
+            <p class="details-content">${email}</p>
         </div>
         <div class="phone details">
-            <img class="icon-items" src="./icon/call.png" alt="phone">
-            <p>${phone}</p>
+            <img class="details-icon" src="./icon/call.png" alt="phone">
+            <p class="details-content">${phone}</p>
         </div>
     `;
 }

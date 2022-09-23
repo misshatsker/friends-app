@@ -13,43 +13,58 @@
     <title>Friends App</title>
 </head>
 <body>
-    <div class="mainMenu">
-        <button class="find-btn">Find a friend</button>
-        <img  class="image-main-screen" src="/media/friendslogo.png" alt="image-main-screen">
-    </div>
+    <div class="fullPage">
+        <div class="mainMenu">
+            <button class="find-btn">Find a friend</button>
+            <img  class="image-main-screen" src="/media/friendslogo.png" alt="image-main-screen">
+        </div>
 
-    <div class="section-dating">
-        <div class="aside-search-form">
-            <div class="sortBy">
-                <form class="search-field">
-                    <input type="text" placeholder="Search by name ...">
-                    <button type="submit"></button>
-                </form>
-                <p class="search-text">Filter by:</p>
+        <div class="section-dating">
+            <div class="aside-search-form">
+                <div class="sortBy">
+                    <form class="search-field">
+                        <input type="text" placeholder="Search by name ...">
+                        <button type="submit"></button>
+                    </form>
+                    <p class="search-text">Filter by:</p>
 
-                <div class="sortByAge">
-                    <p class="search-text">Age:</p>
-                    <input type="radio" id="search-age-to-30" name="age" value="age">
-                    <label class="radio-button" for="search-age-to-30">to 30</label>
-                    <input type="radio" id="search-age-to-50" name="age" value="age">
-                    <label class="radio-button" for="search-age-to-50">to 50</label>
-                    <input type="radio" id="search-age-to-80" name="age" value="age">
-                    <label class="radio-button" for="search-age-to-80">to 80</label>
-                </div>
-    
-                <div class="sortByGender">
-                    <p class="search-text">Gender:</p>
-                    <input type="radio" id="search-gender" name="gender" value="gender">
-                    <label class="radio-button" for="search-gender">male</label>
-                    <input type="radio" id="search-gender" name="gender" value="gender">
-                    <label class="radio-button" for="search-gender">female</label>
-                    <input type="radio" id="search-gender" name="gender" value="gender">
-                    <label class="radio-button" for="search-gender">all</label>
+                    <div class="sortByAge sort-rule">
+                        <p class="search-text">Age:</p>
+                        <div class="option">
+                            <input type="radio" id="search-age-to-30" name="age" value="age">
+                            <label class="radio-button" for="search-age-to-30">to 30</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="search-age-to-50" name="age" value="age">
+                            <label class="radio-button" for="search-age-to-50">to 50</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="search-age-to-80" name="age" value="age">
+                            <label class="radio-button" for="search-age-to-80">to 80</label>
+                        </div>
+                    </div>
+
+                    <div class="sortByGender sort-rule">
+                        <p class="search-text">Gender:</p>
+                        <div class="option">
+                            <input type="radio" id="search-gender-male" name="gender" value="gender">
+                            <label class="radio-button" for="search-gender-male">male</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="search-gender-female" name="gender" value="gender">
+                            <label class="radio-button" for="search-gender-female">female</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" id="search-gender-all" name="gender" value="gender">
+                            <label class="radio-button" for="search-gender-all">all</label>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <div class="section-users"></div>
         </div>
-        <div class="section-users"></div>
     </div>
+    
 
     <script src="./index.js"></script>
 </body>

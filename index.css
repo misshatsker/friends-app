@@ -18,7 +18,7 @@ body {
 
 .image-main-screen {
   height: 600px;
-  width: 600px;
+  /* width: 600px; */
 }
 
 .find-btn {
@@ -54,7 +54,7 @@ body {
   padding-top: 15px;
   padding-left: 10px;
   min-height: 100vh;
-  display: none;
+  /* display: none; */
 }
 
 .section-dating.active {
@@ -62,13 +62,14 @@ body {
 }
 
 .aside-search-form {
+  /* display: none; */
   background-color: #DAEAF1;
   border-radius: 15px;
   margin: 10px 10px 10px;
-  width: 500px;
+  /* width: 500px; */
   height: fit-content;
   box-shadow: 0 0 10px rgb(0 0 0 / 40%);
-
+  padding-bottom: 25px;
 }
 
 .search-field {
@@ -79,9 +80,10 @@ body {
 }
 
 .search-field input {
-  width: 300px;
   height: 42px;
   padding-left: 15px;
+  padding-top: 25px;
+  padding-bottom: 25px;
   border-radius: 42px;
   border: 2px solid #00759f;
   background: #DAEAF1;
@@ -93,7 +95,7 @@ body {
 }
 
 .search-field button {
-  width: 42px;
+  /* width: 42px; */
   height: 42px;
   background: none;
   border: none;
@@ -101,9 +103,27 @@ body {
   top: -2px;
   right: 0;
 }
+/* 
+position: fixed;
+margin: 0;
+top: 0;
+left: 0;
+width: 100%;
+border-radius: 0;
+padding-left: 25px;
+padding-bottom: 20px;
+padding-top: 20px; */
 
 .sortBy {
   margin-bottom: 10px;
+}
+
+.sort-rule {
+  display: flex;
+}
+
+.option {
+  display: flex;
 }
 
 .search-text {
@@ -123,6 +143,7 @@ body {
 .section-users {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .user {
@@ -130,17 +151,20 @@ body {
   padding: 10px;
   box-shadow: 0 0 10px rgb(0 0 0 / 40%);
   margin: 10px;
+  width: 300px;
 }
 
 .imageUser {
-  height: 300px;
-  width: 300px;
+  width: 160px;
   border-radius: 10px;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 15px;
 }
 
-.icon-items {
+.details-icon {
   height: 25px;
-  width: 25px;
+  /* width: 25px; */
 }
 
 .span-hobby  {
@@ -153,8 +177,71 @@ body {
   margin-bottom: 5px;
 }
 
-.details .icon-items {
+.details .details-icon {
   margin-right: 10px;
   margin-left: 10px;
 }
+/* 
+@media all and (max-width: 1200px) {
+  .fullPage {
+    max-width: 970px;
+  }
+}
 
+@media (max-width: 992px) {
+  .fullPage {
+    max-width: 750px;
+  }
+}
+
+@media (max-width: 767px) {
+  .fullPage {
+    max-width: none;
+  }
+} */
+
+.details-content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media all and (max-width: 1200px) {
+  .user {
+    width: 250px;
+  }
+}
+
+@media all and (max-width: 960px) {
+  .aside-search-form {    
+    position: fixed;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 0;
+    padding-left: 25px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    opacity: 0.95;
+  }
+
+  .sort-rule {
+    flex-direction: column;
+    margin-top: 15px;
+  }
+
+  .option {
+    margin-left: 25px;
+    margin-bottom: 5px;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .user {
+    width: 70%;
+  }
+
+  .imageUser {
+    width: 200px;
+  }
+}
