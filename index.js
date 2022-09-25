@@ -1,5 +1,6 @@
 const url = 'https://randomuser.me/api/?nat=UA&results=18';
 
+const mainMenu = document.querySelector('.mainMenu');
 const sectionDating = document.querySelector('.sectionDating');
 const sectionUsers = document.querySelector('.sectionUsers');
 const findBtn = document.querySelector('.findBtn');
@@ -48,8 +49,6 @@ function appendUserCards(users) {
 }
 
 async function init() {
-    const users = await fetchRandomUsers();
-
     function rulesUpdated() {
         sectionUsers.innerHTML = null;
         appendUserCards(
@@ -91,6 +90,7 @@ async function init() {
         rulesUpdated();
     };
 
+    const users = await fetchRandomUsers();
     rulesUpdated();
 }
 
@@ -208,8 +208,15 @@ class UserInput {
     }
 }
 
+const timeToHideIntro = 1000;
 findBtn.onclick = () => {
     sectionDating.classList.add('active');
-    sectionDating.scrollIntoView({behavior: 'smooth'});
+
+    sectionDating.scrollIntoView({behavior: 'smooth', });
+
+    setTimeout(() => {
+        mainMenu.classList.remove('active');
+    }, timeToHideIntro);
+
     init();
 }
