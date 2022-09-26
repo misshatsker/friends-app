@@ -1,3 +1,14 @@
+:root {
+  --white: #ffffff;
+  --blueOcean: #00759f;
+  --snow: #fbfbfb;
+  --coral: #f64b61;
+  --dark: #060606;
+  --sundown: #f3b5b5;
+  --palePink: #F2D1D1;
+  --mint: #DAEAF1;
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -9,24 +20,44 @@ body {
 
 .mainMenu {
   width: 100%;
-  background-color: white;
+  background-color: var(--white);
   height: 100vh;
   display: none;
   flex-direction: column;
   align-items: center;
+  background-image: url(/media/friendslogo.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 800px;
+
 }
+
 .mainMenu.active {
   display: flex;
 }
 
-.mainScreenImage {
-  height: 600px;
-  /* width: 600px; */
+.hamburger {
+  height: fit-content;
+  position: fixed;
+  display: none;
+  cursor: pointer;
+  z-index: 1;
+  margin-left: 3px;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--blueOcean);
 }
 
 .findBtn {
   background-color: transparent;
-  border: 2px solid #fbfbfb;
+  border: 2px solid var(--snow);
   border-radius: 0.6em;
   cursor: pointer;
   font-weight: 400;
@@ -37,23 +68,23 @@ body {
   font-weight: 700;
   margin: auto;
   margin-top: 65px;
-  border-color: #f64b61;
-  color: #060606;
-  box-shadow: 0 0 40px 40px #f64b61 inset, 0 0 0 0 #f64b61;
+  border-color: var(--coral);
+  color: var(--dark);
+  box-shadow: 0 0 40px 40px var(--coral) inset, 0 0 0 0 var(--coral);
   transition: all 150ms ease-in-out;
 }
 
 .findBtn:hover, .findBtn:focus {
-  color: #060606;
+  color: var(--dark);
   outline: 0;
 }
 
 .findBtn:hover {
-  box-shadow: 0 0 10px 0 #f3b5b5 inset, 0 0 10px 4px #f64b61;
+  box-shadow: 0 0 10px 0 var(--sundown) inset, 0 0 10px 4px var(--coral);
 }
 
 .sectionDating {
-  background-color: #F2D1D1;
+  background-color: var(--palePink);
   padding-top: 15px;
   padding-left: 10px;
   min-height: 100vh;
@@ -65,18 +96,16 @@ body {
 }
 
 .asideSearchForm {
-  /* display: none; */
-  background-color: #DAEAF1;
+  background-color: var(--mint);
   border-radius: 15px;
   margin: 10px 10px 10px;
-  /* width: 500px; */
   height: fit-content;
   box-shadow: 0 0 10px rgb(0 0 0 / 40%);
   padding-bottom: 25px;
 }
 
 .searchField {
-  background: #DAEAF1;
+  background: var(--mint);
   border-radius: 15px 15px 0 0;
   margin-right: 25px;
   margin-left: 15px;
@@ -88,8 +117,8 @@ body {
   padding-top: 25px;
   padding-bottom: 25px;
   border-radius: 42px;
-  border: 2px solid #00759f;
-  background: #DAEAF1;
+  border: 2px solid var(--blueOcean);
+  background: var(--mint);
   outline: none;
   transition: .3s linear;
   margin: 15px 0 15px 10px;
@@ -98,7 +127,6 @@ body {
 }
 
 .searchField .searchFieldButton {
-  /* width: 42px; */
   height: 42px;
   background: none;
   border: none;
@@ -123,14 +151,14 @@ body {
   text-transform: uppercase;
   margin: auto 10px;
   font-size: 25px;
-  color: #00759f;
+  color: var(--blueOcean);
 }
 
 .resetBtn {
   text-transform: uppercase;
   font-size: 25px;
-  border-color: #00759f;
-  color: #00759f;
+  border-color: var(--blueOcean);
+  color: var(--blueOcean);
   background-color: transparent;
   border-radius: 8px;
   padding-left: 20px;
@@ -147,7 +175,7 @@ body {
     margin: auto 0;
     padding: 0 15px 0 5px;
     font-size: 20px;
-    color: #00759f;
+    color: var(--blueOcean);
 }
 
 .sectionUsers {
@@ -160,7 +188,7 @@ body {
 }
 
 .user {
-  background-color: #DAEAF1;
+  background-color: var(--mint);
   padding: 10px;
   box-shadow: 0 0 10px rgb(0 0 0 / 40%);
   margin: 10px;
@@ -177,7 +205,6 @@ body {
 
 .detailsIcon {
   height: 25px;
-  /* width: 25px; */
 }
 
 .details {
@@ -203,7 +230,32 @@ body {
 }
 
 @media all and (max-width: 960px) {
-  .asideSearchForm {    
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .asideSearchForm {
+    position: fixed;
+    left: -200%;
+    top: 0;
+    transition: 0.3s;
+    width: 100%;
+    opacity: 0.95;
+  }
+
+  .asideSearchForm.active {    
     position: fixed;
     margin: 0;
     top: 0;

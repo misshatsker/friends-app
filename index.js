@@ -1,8 +1,9 @@
-const url = 'https://randomuser.me/api/?nat=UA&results=18';
+const url = 'https://randomuser.me/api/?nat=UA&results=30';
 
 const mainMenu = document.querySelector('.mainMenu');
 const sectionDating = document.querySelector('.sectionDating');
 const sectionUsers = document.querySelector('.sectionUsers');
+const hamburger = document.querySelector('.hamburger');
 const findBtn = document.querySelector('.findBtn');
 const sortByAge = document.querySelector('.sortByAge');
 const sortByGender = document.querySelector('.sortByGender');
@@ -219,4 +220,9 @@ findBtn.onclick = () => {
     }, timeToHideIntro);
 
     init();
+}
+
+hamburger.onclick = () => {
+    hamburger.classList.toggle('active');
+    asideSearchForm.classList.toggle('active');
 }
