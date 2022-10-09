@@ -40,10 +40,13 @@ async function fetchRandomUsers() {
     }
 }
 
-function getFilteredUsers(users, inputValue, genderFilterValue) {
+function getFilteredUsers(users, inputValue, ageFilterValue, genderFilterValue) {
     let filteredUsers = users;
     if (inputValue) {
         filteredUsers = filteredUsers.filter((user) => user.name.toLowerCase().includes(inputValue));
+    }
+    if (ageFilterValue) {
+        filteredUsers = filteredUsers.filter((user) => user.age < ageFilterValue);
     }
     if (genderFilterValue) {
         filteredUsers = filteredUsers.filter((user) => user.gender === genderFilterValue);
@@ -79,6 +82,7 @@ async function init() {
                 getFilteredUsers(
                     users,
                     userInput.value,
+                    ageFilter.value,
                     genderFilter.value
                 ),
                 ageSort.value
@@ -89,10 +93,20 @@ async function init() {
     const userInput = new UserInput(searchInput, rulesUpdated);
 
     const ageSort = new UserSort(
-        'age',
+        'years',
         [
             {id: 'asc', title: 'asc'},
             {id: 'desc', title: 'desc'}
+        ],
+        rulesUpdated
+    );
+
+    const ageFilter = new UserFilter(
+        'age',
+        [
+            {id: 30, title: 'to 30'},
+            {id: 50, title: 'to 50'},
+            {id: 80, title: 'to 80'}
         ],
         rulesUpdated
     );
@@ -221,7 +235,7 @@ class UserSort{
         this.append();
     }
 
-    getFilterHTMLCode() {
+    getSortHTMLCode() {
         const optionsElements = this.options.map((option) => {
             return `
                 <div class="option">
@@ -250,7 +264,7 @@ class UserSort{
             }
         }
 
-        div.innerHTML = this.getFilterHTMLCode();
+        div.innerHTML = this.getSortHTMLCode();
         sortBy.append(div);
     }
 
